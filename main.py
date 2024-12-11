@@ -88,4 +88,8 @@ while True:
     print(".", end="", flush=True)  # In dấu chấm mỗi khi gửi hình ảnh
     
     # Gửi hình ảnh qua WebSocket mỗi khi có khung hình
-    sio.emit('video', {'image': img_base64_with_prefix, 'system_id': 'iot_01'})
+    try:
+        sio.emit('video', {'image': img_base64_with_prefix, 'system_id': 'iot_01'})
+    except Exception as e:
+        print(f"Error: Failed to send image to server: {e}")
+        continue
