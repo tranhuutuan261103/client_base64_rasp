@@ -1,0 +1,4 @@
+opencv_python==4.10.0.84
+python_socketio==5.11.4
+pillow==11.0.0
+socketio==0.2.1
